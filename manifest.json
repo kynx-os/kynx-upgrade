@@ -43,8 +43,8 @@
     "version": "/usr/share/kynx/version.txt"
   },
   "notes": [
-    "system/ content is copied into /usr/share/kynx/system and is not auto-applied unless scripts/post-upgrade.sh does it",
-    "packages/*.sh are installed into /usr/bin without the .sh suffix",
-    "This manifest is for Kynx GitHub-based kupgrade layout"
+    "system content is copied into /usr/share/kynx/system and is not auto-applied unless scripts/post-upgrade.sh does it",
+    "packages *.sh are installed into /usr/bin without the .sh suffix",
+    "This manifest is for the Kynx GitHub-based kupgrade layout"
   ]
 }
