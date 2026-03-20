@@ -5,7 +5,16 @@ MODE="${1:-}"
 
 print_disks() {
   echo "Available target disks:"
-  lsblk -d -o NAME,SIZE,MODEL | sed '1d' | awk '{print "/dev/"$1, $2, substr($0, index($0,$3))}'
+  if command -v lsblk >/dev/null 2>&1 && [ -d /sys/dev/block ]; then
+    lsblk -d -o NAME,SIZE,MODEL | sed '1d' | awk '{print "/dev/"$1, $2, substr($0, index($0,$3))}'
+    return 0
+  fi
+
+  awk '
+    $4 ~ /^(vd|sd|hd|nvme)[a-z0-9]+$/ {
+      print "/dev/" $4
+    }
+  ' /proc/partitions
 }
 
 check_disk() {
