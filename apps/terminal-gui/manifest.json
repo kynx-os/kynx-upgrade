@@ -1,0 +1,8 @@
+{
+  "id": "terminal-gui",
+  "name": "Kynx Terminal GUI",
+  "version_file": "version.txt",
+  "install_root": "/opt/kynx/apps/terminal-gui",
+  "binary": "files/kynx-terminal-gui",
+  "launcher": "/usr/bin/kynx-terminal-gui"
+}
